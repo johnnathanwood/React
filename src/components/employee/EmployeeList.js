@@ -6,6 +6,7 @@ class EmployeeList extends Component {
         return (
             <section className="employees">
             {
+                
                 this.props.employees.map(employee =>
                     <div key={employee.id}>
                         {employee.name}

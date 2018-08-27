@@ -9,6 +9,7 @@ export default class LocationList extends Component {
                 <h2>Our Locations</h2>
                 {
                 this.props.locations.map(location =>
+                    <div key={location.id} className="card">
                         <div id={`location--${location.id}`} key={location.id}>
                             <div className="card-body">
                                 <h5 className="card-title">
@@ -18,6 +19,7 @@ export default class LocationList extends Component {
                                     <button onClick={() => this.props.deleteLocation(location.id)}
                                         className="card-link">Delete</button>
                                 </h5>
+                                </div>
                             </div>
                         </div>
                     )

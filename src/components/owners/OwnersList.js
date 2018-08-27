@@ -7,6 +7,7 @@ export default class OwnersList extends Component {
                 <h2>Owners</h2>
                 {
                     this.props.owners.map(owner =>
+                    <div key={owner.id} className="card">
                         <div className="card-body">
                             <h5 className="card-title">
                                 <h4>{owner.name}</h4>
@@ -15,6 +16,7 @@ export default class OwnersList extends Component {
                                     className="card-link">Delete</button>
                             </h5>
                         </div>
+                    </div>
                     )
                 }
             </section>

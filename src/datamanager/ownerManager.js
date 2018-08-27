@@ -1,22 +1,23 @@
+import React, { Component } from 'react';
 
-const remoteURL = "http://localhost:5002"
-
-export default Object.create(null, {
-    getOwner: {
-        value: function (id) {
-            return fetch(`${remoteURL}/owners/${id}`).then(e => e.json())
+export default class OwnersList extends Component {
+    render() {
+         return(
+            <section className="owners">
+                <h2>Owners</h2>
+                {
+                    this.props.owners.map(owner =>
+                        <div className="card-body">
+                            <h5 className="card-title">
+                                <h4>{owner.name}</h4>
+                                <p>{owner.phoneNumber}</p>
+                                <button onClick={() => this.props.deleteOwner(owner.id)}
+                                    className="card-link">Delete</button>
+                            </h5>
+                        </div>
+                    )
         }
-    },
-    getAllOwners: {
-        value: function () {
-            return fetch(`${remoteURL}/owners`).then(e => e.json())
-        }
-    },
-    deleteOwner: {
-        value: function (id) {
-            fetch(`http://localhost:5002/owners/${id}`, {
-                method: "DELETE"
-            })
+            </section>
+        ) 
         }
     }
-}) 

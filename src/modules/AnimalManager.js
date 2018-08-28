@@ -10,5 +10,6 @@ export default Object.create(null, {
         value: function () {
             return fetch(`${remoteURL}/animals`).then(e => e.json())
         }
-    }
+    },
+    
 })

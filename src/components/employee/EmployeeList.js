@@ -4,7 +4,7 @@ import React, { Component } from 'react'
 export default class EmployeeList  extends Component {
     render() {
         return (
-            <section className="emplyees">
+            <section className="employees">
                 <h2>Employees</h2>
                 {
                 this.props.employees.map(employee =>
@@ -13,7 +13,7 @@ export default class EmployeeList  extends Component {
                     <h5 className="card-title">
                         <h4>{employee.name}</h4>
                         <button onClick={() => this.props.deleteEmployee(employee.id)}
-                            className="card-link">Delete</button>
+                            className="card-link">Fired</button>
                     </h5>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-
+import dog from "./DogIcon.png";
+import "./Animal.css"
 
 
 export default class AnimalList extends Component {
@@ -13,10 +14,11 @@ export default class AnimalList extends Component {
                     <div key={animal.id} className="card">
                         <div className="card-body">
                             <h5 className="card-title">
+                            <img src={dog} className="icon--dog" />
                                 {animal.type}<br />
                                 {animal.name}
                                 <button onClick={() => this.props.deleteAnimal(animal.id)}
-                                    className="card-link">Delete</button>
+                                    className="card-link">Eat</button>
                             </h5>
                         </div>
                     </div>

@@ -1,7 +1,6 @@
 import React, { Component } from "react"
 import "./Animal.css"
 
-
 export default class AnimalForm extends Component {
     // Set initial state
     state = {
@@ -62,12 +61,11 @@ export default class AnimalForm extends Component {
                                 onChange={this.handleFieldChange}>
                             <option value="">Select an employee</option>
                         {
-                        
                             this.props.employees.map(e => <option key={e.id} id={e.id}>{e.name}</option>)
                         }
                         </select>
                     </div>
-                    <button type="submit" onClick={this.constructNewEmployee} className="btn btn-primary">Submit</button>
+                    <button type="submit" onClick={this.constructNewAnimal} className="btn btn-primary">Submit</button>
                 </form>
             </React.Fragment>
         )

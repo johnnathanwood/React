@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 
 export default class LocationList extends Component {
+    isAuthenticated = () => localStorage.getItem("credentials") !== null
     render() {
          return(
             <section className="locations">

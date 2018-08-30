@@ -1,20 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import "./Employee.css";
 
 
-
-export default class EmployeeList extends Component {
-    render () {
         // JavaScript stuff can be writen here!
         
-        return (
-            <React.Fragment>
-                <div className="employeeButton">
-                    <button type="button"
-                            className="btn btn-success"
-                            onClick={() => {
-                                this.props.history.push("/employees/new")}
-                            }>
+export default class EmployeeList extends Component {
+            render () {
+                return (
+                    <React.Fragment>
+                        <div className="employeeButton">
+                            <button type="button"
+                                    className="btn btn-success"
+                                    onClick={() => {
+                                        this.props.history.push("/employees/new")}
+                                    }>
                         New Employee
                     </button>
                 </div>
@@ -26,7 +25,6 @@ export default class EmployeeList extends Component {
                             <h5 className="card-title">
                             
                                 {employee.name}<br />
-                                {employee.phone}
                                 <button onClick={() => this.props.deleteEmployee(employee.id)}
                                     className="card-link">Fired</button>
                             </h5>

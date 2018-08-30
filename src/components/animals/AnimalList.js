@@ -1,8 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from "react-router-dom"
-import dog from "./DogIcon.png";
-import "./Animal.css";
-
+import React, { Component } from "react"
+import "./Animal.css"
+import AnimalCard from "./AnimalCard"
 
 export default class AnimalList extends Component {
     render () {
@@ -10,31 +8,18 @@ export default class AnimalList extends Component {
             <React.Fragment>
                 <div className="animalButton">
                     <button type="button"
-                            className="btn btn-success"
-                            onClick={() => {
-                                this.props.history.push("/animals/new")}
-                            }>
+                            onClick={()=> this.props.history.push("/animals/new")}
+                            className="btn btn-success">
                         Admit Animal
                     </button>
                 </div>
                 <section className="animals">
-            {
-                this.props.animals.map(animal =>
-                    <div key={animal.id} className="card">
-                        <div className="card-body">
-                            <h5 className="card-title">
-                            <img src={dog} className="icon--dog" />
-                                {animal.type}<br />
-                                {animal.name}
-                                <Link className="nav-link" to={`/animals/${animal.id}`}>Details</Link>
-                                <button onClick={() => this.props.deleteAnimal(animal.id)}
-                                    className="card-link">Eat</button>
-                            </h5>
-                        </div>
-                    </div>
-                )
-            }
-            </section>
+                {
+                    this.props.animals.map(animal =>
+                        <AnimalCard key={animal.id} animal={animal} {...this.props} />
+                    )
+                }
+                </section>
             </React.Fragment>
         )
     }

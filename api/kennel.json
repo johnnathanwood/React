@@ -1,10 +1,6 @@
 {
   "employees": [
     {
-      "name": "Dillon Nevil",
-      "id": 5
-    },
-    {
       "name": "John Nathan Wood",
       "id": 6
     },
@@ -41,18 +37,6 @@
     {
       "id": 5,
       "name": "Derkins"
-    },
-    {
-      "name": "This is another test",
-      "breed": "dog ",
-      "employeeId": 6,
-      "id": 7
-    },
-    {
-      "name": "Test god",
-      "breed": "Test this",
-      "employeeId": 6,
-      "id": 8
     }
   ],
   "owners": [

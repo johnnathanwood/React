@@ -135,16 +135,31 @@ export default class ApplicationViews extends Component {
                        employees={this.state.employees} />
                 }} />
 
+                {/* <Route exact path="/employees" render={props => {
+                    if (this.isAuthenticated()) {
+                    return <EmployeeList deleteEmployee={this.deleteEmployee}
+                             employees={this.state.employees} />
+                    } else {
+                    return <Redirect to="/login" />
+                    }
+                }} /> */}
+
                 <Route exact path="/employees" render={(props) => {
                     return <EmployeeList {...props}
                        deleteEmployee={this.deleteEmployee}
                        employees={this.state.employees} />
+                       if (this.isAuthenticated()) {
+                        return <EmployeeList deleteEmployee={this.deleteEmployee}
+                                 employees={this.state.employees} />
+                        } else {
+                        return <Redirect to="/login" />
+                        }
                 }} />
 
                 <Route path="/employees/new" render={(props) => {
                     return <EmployeeForm {...props}
                        addEmployee={this.addEmployee}
-                        />
+                       employees={this.state.employees} />
             }} />
 
                 {/* <Route exact path="/employees" render={(props) => {
@@ -170,14 +185,7 @@ export default class ApplicationViews extends Component {
                     }
                 }} /> */}
 
-                <Route exact path="/employees" render={props => {
-                    if (this.isAuthenticated()) {
-                    return <EmployeeList deleteEmployee={this.deleteEmployee}
-                             employees={this.state.employees} />
-                    } else {
-                    return <Redirect to="/login" />
-                    }
-                }} />
+                
                 <Route exact path="/" render={props => {
                     if (this.isAuthenticated()) {
                     return <LocationList deleteLocation={this.deleteLocation}

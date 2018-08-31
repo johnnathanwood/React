@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./Owners.css"
 
 export default class OwnersList extends Component {
     render() {
